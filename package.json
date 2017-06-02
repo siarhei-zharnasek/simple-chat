@@ -7,12 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Siarhei Zharnasek",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "express-ws": "^3.0.0",
-    "node-static": "^0.7.9",
-    "ws": "^3.0.0"
+    "express-ws": "^3.0.0"
   }
 }

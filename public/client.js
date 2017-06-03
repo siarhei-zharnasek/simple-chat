@@ -1,4 +1,5 @@
-const ws = new WebSocket('ws://localhost:3667');
+const HOST = location.origin.replace(/^http/, 'ws');
+const ws = new WebSocket(HOST);
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const chat = document.querySelector('.chat');

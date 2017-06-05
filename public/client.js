@@ -57,3 +57,5 @@ ws.onmessage = msg => {
 
     input.value = '';
 };
+
+ws.onclose = () => recognition.stop();

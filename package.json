@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "node-js-simple-chat",
   "version": "0.2.6",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Simple chat with speach recognition",
   "engines": {
     "node": "6.10.2"
   },
@@ -10,15 +10,17 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "node-google-translate-skidz": "^1.1.1",
+    "request": "^2.81.0",
+    "ws": "^3.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/Siarhei-Zharnasek/simple-chat"
   },
   "keywords": [
     "node",
-    "heroku",
     "express"
   ],
   "license": "MIT"

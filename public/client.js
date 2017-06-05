@@ -1,20 +1,39 @@
 const HOST = location.origin.replace(/^http/, 'ws');
 const ws = new WebSocket(HOST);
 const form = document.querySelector('form');
-const input = document.querySelector('input');
+const input = document.querySelector('.input-text');
+const checkbox = document.querySelector('.input-translate');
 const chat = document.querySelector('.chat');
 const USER_ID = +new Date();
+const recognition = new webkitSpeechRecognition();
+
+recognition.onresult = event => {
+    let data = {
+        id: USER_ID,
+        msg: event.results[0][0].transcript,
+        enableTranslate: checkbox.checked
+    };
+
+    ws.send(JSON.stringify(data));
+};
+
+recognition.onend = () => {
+    recognition.start();
+};
 
 ws.onopen = () => {
+    recognition.start();
+
     form.onsubmit = e => {
         e.preventDefault();
         let data = {
             id: USER_ID,
-            msg: input.value
+            msg: input.value,
+            enableTranslate: checkbox.checked
         };
 
         ws.send(JSON.stringify(data));
-    }
+    };
 };
 
 ws.onmessage = msg => {
